@@ -4,9 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyBilliards"
+        xmlns:MyControls="clr-namespace:MyBilliards.Body"
+        xmlns:MyConverter="clr-namespace:MyBilliards.Converter"
+        xmlns:prop="clr-namespace:MyBilliards.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="桌球" Height="800" Width="1200">
+    <Window.Resources>
+        <MyConverter:PostionX_Converter x:Key="xConverter"/>
+        <MyConverter:PostionY_Converter x:Key="yConverter"/>
+    </Window.Resources>
+
+
+    <Canvas x:Name="root">
+        <Image Source="Image/eightBall/eightBall_DeskImage.png"></Image>
+        <MyControls:WhiteBall x:Name="wb" Canvas.Left="{Binding Position, Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position, Converter={StaticResource yConverter}}">
+
+        </MyControls:WhiteBall>
+        <Slider x:Name="x_slider" Width="200" Minimum="0" Maximum="500" Value="100" ValueChanged="Slider_ValueChanged" Canvas.Left="110" Canvas.Top="674" IsSnapToTickEnabled="True" />
+        <Slider x:Name="y_slider" Width="200" Minimum="0" Maximum="300" Value="100" ValueChanged="Slider_ValueChanged" Canvas.Left="401" Canvas.Top="674" IsSnapToTickEnabled="True" />
+
+    </Canvas>
+
 </Window>

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using MyBilliards.Body;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +25,28 @@ namespace MyBilliards
         public MainWindow()
         {
             InitializeComponent();
+            InitGame();
+
+
+        }
+        public void InitGame()
+        {
+           
+            
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Slider sd = (Slider)sender;
+            Vector2 nnow = wb.Postion;
+            if (sd.Name == "x_slider")
+            {
+                wb.Postion = new Vector2((float)sd.Value, nnow.Y);
+            }
+            else
+            {
+                wb.Postion = new Vector2(nnow.X,(float)sd.Value);
+            }
         }
     }
 }

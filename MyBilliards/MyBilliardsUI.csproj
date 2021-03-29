@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A14FF35-CB23-46E2-BCAD-224057D8BC9B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MyBilliards</RootNamespace>
+    <AssemblyName>MyBilliards</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Body\WhiteBall.cs" />
+    <Compile Include="Converter\PostionY_Converter.cs" />
+    <Compile Include="Converter\PostionX_Converter.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\ball_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Ball_HighLight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Ball_Shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_BallBag_Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Bootom_traslateBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Btn_Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Cue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Cue_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_DeskImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_DrawCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_DrawCircle_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_DrawCircle_Shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_DrawLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Effect_Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_FineTurning_Back2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_FineTurning_Scale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_FineTurning_Tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_FineTurningBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_ForbidSet_WhiteBall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_HeadFramwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_HighLowPole_Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_HighLowPole_BigWhiteBall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_HighLowPole_RedPint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Img_VS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Needle_Deal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_PowerView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_PowerView_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Sliderbar_Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_SliderBar_Cue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_SliderBar_Power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_SliderView_Inside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Small_RedPoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Small_Whiteball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_TieBar_Dial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_TimeProgress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Tips.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Tips_Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_TransparentBall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_User2Inf_Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_UserInf_Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_VS_Dial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_WhiteBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_WhiteBall_BigCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_WhiteBall_Hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Word_HitFullBall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Word_HitHalfBall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\eightBall_Word_YourRound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_Effect_Link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\eightBall\img_num_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyBilliardsCore\MyBilliardsCore.csproj">
+      <Project>{6075BC60-8A2F-4047-B4C5-7D191736F849}</Project>
+      <Name>MyBilliardsCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
