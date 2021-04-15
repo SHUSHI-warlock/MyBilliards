@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace MyBilliards.Body
 {
-    class WhiteBall : Image
+    class Ball : Image
     {
         //球对象
         private BaseBall body;
@@ -21,18 +21,32 @@ namespace MyBilliards.Body
             set { body.Position = value; }
         }
 
-        public WhiteBall()
+        public Ball()
         {
-            body = new BaseBall(0);
+            body = new BaseBall();
+            //挂载
+            this.DataContext = body;
+            Width = 2*Constant.Ball_Radius;
+        }
+
+        public void SetId(int id)
+        {
+            body.ID = id;
+        }
+
+        public void SetBody(BaseBall ball)
+        {
+            body = ball;
+            //挂载
             this.DataContext = body;
 
-            //Width = 20;
             Image img = new Image();
             BitmapImage bmp = new BitmapImage();
             bmp.BeginInit();//初始化
-            bmp.UriSource = new Uri(@"Image\eightBall\ball_0.png", UriKind.Relative);//设置图片路径
+            bmp.UriSource = new Uri(UIConstant.BallsImage[body.ID], UriKind.Relative);//设置图片路径
             bmp.EndInit();//结束初始化
             Source = bmp;//设置显示图片
         }
+
     }
 }

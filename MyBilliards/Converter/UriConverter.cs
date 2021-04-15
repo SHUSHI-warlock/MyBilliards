@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace MyBilliards.Converter
 {
-    class PostionY_Converter : IValueConverter
+    class UriConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return UIConstant.Logic2AbsY(((Vector2)value).Y);
+            //相对路径
+            return new Uri((string)value,UriKind.Relative);
             //throw new NotImplementedException();
         }
 
@@ -21,7 +21,5 @@ namespace MyBilliards.Converter
         {
             throw new NotImplementedException();
         }
-
-        
     }
 }

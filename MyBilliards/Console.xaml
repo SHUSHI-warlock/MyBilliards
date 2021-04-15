@@ -1,0 +1,102 @@
+﻿<Window x:Class="MyBilliards.Console"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyBilliards"
+        xmlns:MyConverter="clr-namespace:MyBilliards.Converter"
+        mc:Ignorable="d"
+        Title="Console" Height="450" Width="800">
+
+    <Window.Resources>
+        <MyConverter:UriConverter x:Key="uriConverter"/>
+    </Window.Resources>
+    <Grid x:Name="root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.RowSpan="3" Header="桌球信息">
+            <Grid x:Name="BallsGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="150"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="BallImage" ></Image>
+                <Grid x:Name="BallInfo" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="ID:" />
+                    <TextBox x:Name="ballid" Grid.Row="0" Grid.Column="1"/>
+                    <Label Content="半径:" Grid.Row="1"/>
+                    <TextBox x:Name="ballradius" Grid.Row="1" Grid.Column="1"/>
+                    <Label Content="间隙:" Grid.Row="2"/>
+                    <TextBox x:Name="ballspilt" Grid.Row="2" Grid.Column="1"/>
+                    <Label Content="图片位置:" Grid.Row="3"/>
+                    <TextBox x:Name="ballImage" Grid.Row="3" Grid.Column="1"/>
+                    <Label Content="运动状态:" Grid.Row="4"/>
+                    <ComboBox x:Name="ballStatus" Grid.Row="4" Grid.Column="1">
+                        <ComboBoxItem Content="运动中"/>
+                        <ComboBoxItem Content="静止"/>
+                        <ComboBoxItem Content="在洞内"/>
+                    </ComboBox>
+                </Grid>
+                <Grid x:Name="BallXY" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="逻辑位置:" />
+                    <Label Content="X:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <Label Content="Y:" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="ballX" Grid.Row="0" Grid.Column="2"/>
+                    <TextBox x:Name="ballY" Grid.Row="0" Grid.Column="4"/>
+
+                    <Label Content="显示位置:" Grid.Row="1"/>
+                    <Label Content="X:" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <Label Content="Y:" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="ballShowX" Grid.Row="1" Grid.Column="2"/>
+                    <TextBox x:Name="ballShowY" Grid.Row="1" Grid.Column="4"/>
+                    <Label Content="速度:" Grid.Row="2"/>
+                    <Label Content="X:" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <Label Content="Y:" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="ballVelX" Grid.Row="2" Grid.Column="2"/>
+                    <TextBox x:Name="ballVelY" Grid.Row="2" Grid.Column="4"/>
+
+                </Grid>
+            </Grid>
+
+        </GroupBox>
+    </Grid>
+</Window>

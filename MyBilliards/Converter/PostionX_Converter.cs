@@ -14,7 +14,7 @@ namespace MyBilliards.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return ((Vector2)value).X+30;
+            return  UIConstant.Logic2AbsX(((Vector2)value).X);
             //throw new NotImplementedException();
         }
 

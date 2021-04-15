@@ -57,6 +57,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Console.xaml.cs">
+      <DependentUpon>Console.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\UriConverter.cs" />
+    <Compile Include="UIConstant.cs" />
+    <Page Include="Console.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -65,7 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Body\WhiteBall.cs" />
+    <Compile Include="Body\Ball.cs" />
     <Compile Include="Converter\PostionY_Converter.cs" />
     <Compile Include="Converter\PostionX_Converter.cs" />
     <Compile Include="MainWindow.xaml.cs">
