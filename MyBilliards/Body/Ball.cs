@@ -45,6 +45,7 @@ namespace MyBilliards.Body
             bmp.BeginInit();//初始化
             bmp.UriSource = new Uri(UIConstant.BallsImage[body.ID], UriKind.Relative);//设置图片路径
             bmp.EndInit();//结束初始化
+         
             Source = bmp;//设置显示图片
         }
 

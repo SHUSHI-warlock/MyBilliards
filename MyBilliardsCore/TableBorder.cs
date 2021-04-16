@@ -16,8 +16,6 @@ namespace MyBilliardsCore
         //单位向量
         Vector2 Line { get; set; }
 
-
-
         public TableBorder(Vector2 P1, Vector2 P2)
         {
             Point1 = P1;
@@ -40,7 +38,10 @@ namespace MyBilliardsCore
                 
                 float dot = Vector2.Dot(L1, Line);
                 if (L1.LengthSquared() < Constant.Ball_RadiusSquared + dot * dot)
+                {
+                    ball.IsTouchWall = true;
                     return true;
+                }
             }
             return false;
         }

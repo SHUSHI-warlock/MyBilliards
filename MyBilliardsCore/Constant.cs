@@ -90,6 +90,27 @@ namespace MyBilliardsCore
             new Vector2(-LeftBorder, StartEndPointY-EdgeSlope),
             new Vector2(-(LeftBorder+BorderWidth), StartEndPointY),
         };
+        //转角点
+        public static readonly Vector2[] CornerPoint = new Vector2[12]{
+        //左上边
+            new Vector2(StartPointX + EdgeSlope ,   UpBorder                    ),
+            new Vector2(EndPointX   - MidSlope  ,   UpBorder                    ),
+        //右上边
+            new Vector2(-EndPointX   + MidSlope ,   UpBorder                    ),
+            new Vector2(-StartPointX - EdgeSlope,   UpBorder                    ),
+        //右边
+            new Vector2(LeftBorder              ,   StartEndPointY - EdgeSlope  ),
+            new Vector2(LeftBorder              , - StartEndPointY + EdgeSlope  ),
+        //右下边
+            new Vector2(-StartPointX-EdgeSlope,-UpBorder),
+            new Vector2(-EndPointX+MidSlope,-UpBorder),
+        //左下边
+            new Vector2(EndPointX-MidSlope, -UpBorder),
+            new Vector2(StartPointX+EdgeSlope, -UpBorder),
+        //左边
+            new Vector2(-LeftBorder, -StartEndPointY+EdgeSlope),
+            new Vector2(-LeftBorder, StartEndPointY-EdgeSlope),
+        };
 
         /// <summary>
         /// 洞口的位置
@@ -131,6 +152,9 @@ namespace MyBilliardsCore
         public const float Ball_RadiusSquared = Ball_Radius * Ball_Radius;
 
         //所有球的初始位置
+        public static readonly int[] A_Ball = { 1, 3, 4, 8, 10, 11,14 };
+        public static readonly int[] B_Ball = { 2, 6, 7, 9, 12, 13,15 };
+
         public static readonly Vector2[] InitPostion = new Vector2[16] {
             new Vector2(OpenBallLine,0),                            //白球
 
@@ -154,6 +178,41 @@ namespace MyBilliardsCore
             new Vector2(FirstBallX+4*RadiusSqrt3,-2*Ball_Radius),   //A类球
             new Vector2(FirstBallX+4*RadiusSqrt3,-4*Ball_Radius),   //B类球
         };
+
+        //打乱数组返回
+        public static int[] GetDisruptedItems(int[] a)
+        {
+            //生成一个新数组：用于在之上计算和返回
+            int[] temp;
+            temp = new int[a.Length];
+            for (int i = 0; i < temp.Length; i++)
+            {
+                temp[i] = a[i];
+            }
+
+            //打乱数组中元素顺序
+            Random rand = new Random(DateTime.Now.Millisecond);
+            for (int i = 0; i < temp.Length; i++)
+            {
+                int x, y; int t;
+                x = rand.Next(0, temp.Length);
+                do
+                {
+                    y = rand.Next(0, temp.Length);
+                } while (y == x);
+
+                t = temp[x];
+                temp[x] = temp[y];
+                temp[y] = t;
+            }
+            return temp;
+        }
+
+
+        //最大力量
+        public static float MAX_Strange = 500;
+        public static float Detla_Strange = 10;
+
 
     }
 }

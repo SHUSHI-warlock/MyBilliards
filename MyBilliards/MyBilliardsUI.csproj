@@ -57,10 +57,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Body\Club.cs" />
     <Compile Include="Console.xaml.cs">
       <DependentUpon>Console.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converter\UriConverter.cs" />
+    <Compile Include="Converter\VisibityConverter.cs" />
     <Compile Include="UIConstant.cs" />
     <Page Include="Console.xaml">
       <SubType>Designer</SubType>

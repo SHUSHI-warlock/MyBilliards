@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 
 namespace MyBilliards
 {
@@ -31,6 +34,13 @@ namespace MyBilliards
            "Image/eightBall/ball_15.png",
         };
 
+        //杆
+        public static String ClubImage = "Image/eightBall/eightBall_Cue.png";
+        //public static String ClubImage = "Image/eightBall/eightBall_Cue_bar.png";
+
+
+        
+
         //缩放
         public const float ScaleXY = 1;
 
@@ -48,6 +58,11 @@ namespace MyBilliards
         public static float Logic2AbsX(float x)
         {
             return x + 485 - Constant.Ball_Radius;
+        }
+
+        public static Vector2 PointTrans(Point point)
+        {
+            return new Vector2((float)point.X - 485, -(float)point.Y + 273);
         }
 
     }

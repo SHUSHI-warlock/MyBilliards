@@ -54,9 +54,23 @@ namespace MyBilliardsCore
 
 
         //是否在洞中
-        public bool IsInHole { set; get; }
+        private bool isInHole;
+        public bool IsInHole
+        {
+            get { return isInHole; }
+            set
+            {
+                isInHole = value;
+                if (this.PropertyChanged != null)
+                    this.PropertyChanged.Invoke(this, new PropertyChangedEventArgs("IsInHole"));
+            }
+        }
+
         //是否停止了
         public bool IsStill { set; get; }
+        //是否碰到的边
+        public bool IsTouchWall { set; get; }
+
 
         public BaseBall()
         {

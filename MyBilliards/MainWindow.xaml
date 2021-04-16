@@ -17,28 +17,10 @@
 
 
     <Canvas x:Name="Root">
-        <Canvas x:Name="Desk">
+        <Canvas x:Name="Desk" Focusable="True" MouseDown="Desk_MouseDown" MouseMove="Desk_MouseMove" KeyDown="Desk_KeyDown" KeyUp="Desk_KeyUp">
             <!--桌面背景-->
             <Image x:Name="DeskBackground"  Source="{Binding Source={x:Static local:UIConstant.backgroundImage} ,Converter={StaticResource uriConverter}}"/>
-            <!--
-            <MyControls:Ball x:Name="white_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_1_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            
-            <MyControls:Ball x:Name="_2_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_3_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_4_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_5_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_6_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_7_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_8_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_9_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_10_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_11_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_12_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_13_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_14_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            <MyControls:Ball x:Name="_15_ball" Canvas.Left="{Binding Position,Converter={StaticResource xConverter}}" Canvas.Top="{Binding Position,Converter={StaticResource yConverter}}"/>
-            -->
+        
         </Canvas>
 
     </Canvas>

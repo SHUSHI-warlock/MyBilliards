@@ -44,8 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseBall.cs" />
-    <Compile Include="Club.cs" />
+    <Compile Include="BaseClub.cs" />
     <Compile Include="Constant.cs" />
+    <Compile Include="CornerPoint.cs" />
     <Compile Include="GameControl.cs" />
     <Compile Include="Hole.cs" />
     <Compile Include="Player.cs" />
